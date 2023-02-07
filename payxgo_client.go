@@ -8,10 +8,11 @@ import (
 	"io"
 	"log"
 	"net/http"
-	"payxgo_client/payxgo_util"
 	"reflect"
 	"strings"
 	"time"
+
+	"github.com/payxgo_client/payxgo_util"
 )
 
 type Config struct {
