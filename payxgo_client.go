@@ -35,6 +35,11 @@ const (
 	Pay
 )
 
+const (
+	pay    = "/go/v1/transactions/securepay"
+	update = "/go/v1/transactions/qrRefresh"
+)
+
 type payxgoClient struct {
 	c          *Config
 	requestId  string
@@ -54,6 +59,18 @@ func New(urlPath, secretKey, accessKey string, action action, c *Config, cookieV
 		cookie = cookieValue[0]
 	}
 	c.Amount *= 100
+
+	if len(urlPath) > 0 && urlPath[len(urlPath)-1] == '/' {
+		urlPath = urlPath[:len(urlPath)-1]
+	}
+
+	switch action {
+	case Pay:
+		urlPath += pay
+	case Update:
+		urlPath += update
+	}
+
 	return &payxgoClient{
 		c:          c,
 		accessAddr: urlPath,

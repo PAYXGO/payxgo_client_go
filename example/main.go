@@ -10,7 +10,7 @@ import (
 
 func main() {
 	// 获取支付链接和支付信息
-	config := payxgo_client.New("https://www.saleoner.com/go/v1/transactions/securepay",
+	config := payxgo_client.New("https://www.saleoner.com",
 		"MDICKwHQdroAwQxDRton5VBHtT92di36Ev7zSr/vLUvRIVAnkKgbmczshqWf0BUCAwEAAQ",
 		"000fe36e62ff81b8f69bbcecdc154f539a55d32207e11fe5403669846604428d1b1988d4e918e585d896ed",
 		payxgo_client.Pay, &payxgo_client.Config{
@@ -30,7 +30,7 @@ func main() {
 	fmt.Println(cookie)
 
 	// 刷新支付链接  刷新请求1分钟一次
-	conf := payxgo_client.New("https://www.saleoner.com/go/v1/transactions/qrRefresh",
+	conf := payxgo_client.New("https://www.saleoner.com",
 		"MDICKwHQdroAwQxDRton5VBHtT92di36Ev7zSr/vLUvRIVAnkKgbmczshqWf0BUCAwEAAQ",
 		"000fe36e62ff81b8f69bbcecdc154f539a55d32207e11fe5403669846604428d1b1988d4e918e585d896ed",
 		payxgo_client.Update, nil, cookie)
