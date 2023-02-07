@@ -12,7 +12,7 @@ import (
 	"strings"
 	"time"
 
-	"github.com/payxgo_client/payxgo_util"
+	"payxgo_client/payxgo_util"
 )
 
 type Config struct {
