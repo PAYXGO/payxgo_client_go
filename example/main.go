@@ -3,8 +3,9 @@ package main
 import (
 	"fmt"
 	"log"
-	payxgo_client "payxgo_client"
 	"time"
+
+	payxgo_client "github.com/PAYXGO/payxgo_client_go"
 )
 
 func main() {
