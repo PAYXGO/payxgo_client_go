@@ -3,7 +3,7 @@ package main
 import (
 	"fmt"
 	"log"
-	"payxgo_client"
+	payxgo_client "payxgo_client_go"
 	"time"
 )
 

@@ -8,7 +8,7 @@ import (
 	"io"
 	"log"
 	"net/http"
-	"payxgo_client/payxgo_util"
+	"payxgo_client_go/payxgo_util"
 	"reflect"
 	"strings"
 	"time"
