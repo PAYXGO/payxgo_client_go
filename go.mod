@@ -1,5 +1,5 @@
-module payxgo_client_go
+module payxgo_client
 
-go 1.17
+go 1.20
 
 require github.com/rs/xid v1.4.0
