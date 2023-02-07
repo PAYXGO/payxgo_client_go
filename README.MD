@@ -1,3 +1,5 @@
+# sdk引入
+        go get github.com/PAYXGO/payxgo_client_go@v0.0.1
 # 说明
 * 此版本为golang版本调用
 * 请求调用频率为每分钟一次
