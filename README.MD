@@ -20,6 +20,7 @@
 * 使用POST方式发送IPN通知信息，注意接受参数的处理方式
 * 必须保证异步通知页面(ipn_url)上无任何字符，如空格，HTML标签等，程序执行完成后必须打印输入“ok”(不包括引号)，如果商户反馈给payxgo的字符不是ok这2个字符，payxgo服务器会不断重发通知，最多发送3次
 * 程序执行完成后，ipn_url页面不能执行页面跳转，否则payxgo会因收不到正确结果而重发结果通知
+* RESPONSE SCHEMA: application/json
 
 ---
 
