@@ -58,7 +58,10 @@ func New(urlPath, secretKey, accessKey string, action action, c *Config, cookieV
 	if len(cookieValue) > 0 {
 		cookie = cookieValue[0]
 	}
-	c.Amount *= 100
+
+	if c != nil {
+		c.Amount *= 100
+	}
 
 	if len(urlPath) > 0 && urlPath[len(urlPath)-1] == '/' {
 		urlPath = urlPath[:len(urlPath)-1]

@@ -62,12 +62,12 @@ func calcSha512(str string) string {
 }
 
 func RsaEncrypt(data, key /*密钥*/ []byte) []byte {
-	publicKey, err := x509.ParsePKCS1PublicKey(pBlock(key))
+	publicKey, err := x509.ParsePKIXPublicKey(pBlock(key))
 	if err != nil {
 		log.Println(NewError(1021, err.Error()).Error())
 		return nil
 	}
-	crypt, err := rsa.EncryptPKCS1v15(r.Reader, publicKey, data)
+	crypt, err := rsa.EncryptPKCS1v15(r.Reader, publicKey.(*rsa.PublicKey), data)
 	if err != nil {
 		log.Println(NewError(1022, err.Error()).Error())
 		return nil
@@ -76,7 +76,7 @@ func RsaEncrypt(data, key /*密钥*/ []byte) []byte {
 }
 
 func pBlock(key []byte) []byte {
-	buf, err := base64.RawStdEncoding.DecodeString(string(key))
+	buf, err := base64.StdEncoding.DecodeString(string(key))
 	if err != nil {
 		log.Println(NewError(1023, err.Error()).Error())
 		return nil
