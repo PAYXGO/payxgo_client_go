@@ -6,6 +6,7 @@ import (
 	"encoding/json"
 	"fmt"
 	"io"
+	"io/ioutil"
 	"log"
 	"net/http"
 	"reflect"
@@ -197,7 +198,12 @@ func (n *payxgoClient) request() (string, string, error) {
 	}
 	defer res.Body.Close()
 
-	buf, err := io.ReadAll(res.Body)
+	// buf, err := io.ReadAll(res.Body)
+	// if err != nil {
+	// 	return "", cookieValue, err
+	// }
+	// 兼容1.17以下的版本
+	buf, err := ioutil.ReadAll(res.Body)
 	if err != nil {
 		return "", cookieValue, err
 	}
